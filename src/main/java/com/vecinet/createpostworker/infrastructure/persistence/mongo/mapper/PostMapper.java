@@ -1,7 +1,7 @@
-package com.vecinet.createpostworker.infrastructure.mongo.mapper;
+package com.vecinet.createpostworker.infrastructure.persistence.mongo.mapper;
 
 import com.vecinet.createpostworker.domain.entity.PostEntity;
-import com.vecinet.createpostworker.infrastructure.mongo.model.PostModel;
+import com.vecinet.createpostworker.infrastructure.persistence.mongo.model.PostModel;
 import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;

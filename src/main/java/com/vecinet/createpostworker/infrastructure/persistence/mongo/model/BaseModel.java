@@ -1,4 +1,4 @@
-package com.vecinet.createpostworker.infrastructure.mongo.model;
+package com.vecinet.createpostworker.infrastructure.persistence.mongo.model;
 
 import lombok.Getter;
 import lombok.NonNull;
