@@ -10,6 +10,10 @@ import org.springframework.validation.annotation.Validated;
 @Validated
 @Configuration
 public class EnvironmentConfig implements EnvironmentConfigPort {
+    @Value("${server.port}")
+    @NotBlank(message = "Server port must not be blank")
+    private int serverPort;
+
     @Value("${environment.mongo.username}")
     @NotBlank(message = "Mongo username must not be blank")
     private String mongoUsername;
@@ -41,6 +45,11 @@ public class EnvironmentConfig implements EnvironmentConfigPort {
     @Value("${environment.rabbitmq.password}")
     @NotBlank(message = "RabbitMQ password must not be blank")
     private String rabbitMQPassword;
+
+    @Override
+    public int getServerPort() {
+        return this.serverPort;
+    }
 
     @Override
     public String getMongoUsername() {
