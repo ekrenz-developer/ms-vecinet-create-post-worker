@@ -10,4 +10,5 @@ public interface EnvironmentConfigPort {
     int getRabbitMQPort();
     String getRabbitMQUsername();
     String getRabbitMQPassword();
+    String getRabbitMQCreatePostQueue();
 }

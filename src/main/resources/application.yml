@@ -16,3 +16,4 @@ environment:
     port: ${RABBITMQ_PORT}
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
+    create_post_queue: ${RABBITMQ_CREATE_POST_QUEUE}

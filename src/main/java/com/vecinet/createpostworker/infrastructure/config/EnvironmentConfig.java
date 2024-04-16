@@ -46,6 +46,10 @@ public class EnvironmentConfig implements EnvironmentConfigPort {
     @NotBlank(message = "RabbitMQ password must not be blank")
     private String rabbitMQPassword;
 
+    @Value("${environment.rabbitmq.create_post_queue}")
+    @NotBlank(message = "RabbitMQ createPostQueue must not be blank")
+    private String rabbitMQCreatePostQueue;
+
     @Override
     public int getServerPort() {
         return this.serverPort;
@@ -89,5 +93,10 @@ public class EnvironmentConfig implements EnvironmentConfigPort {
     @Override
     public String getRabbitMQPassword() {
         return this.rabbitMQPassword;
+    }
+
+    @Override
+    public String getRabbitMQCreatePostQueue() {
+        return this.rabbitMQCreatePostQueue;
     }
 }
