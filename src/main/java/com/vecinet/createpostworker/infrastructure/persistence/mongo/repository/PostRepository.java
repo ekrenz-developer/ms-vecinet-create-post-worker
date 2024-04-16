@@ -1,9 +1,9 @@
-package com.vecinet.createpostworker.infrastructure.mongo.repository;
+package com.vecinet.createpostworker.infrastructure.persistence.mongo.repository;
 
 import com.vecinet.createpostworker.domain.entity.PostEntity;
 import com.vecinet.createpostworker.domain.port.PostRespositoryPort;
-import com.vecinet.createpostworker.infrastructure.mongo.mapper.PostMapper;
-import com.vecinet.createpostworker.infrastructure.mongo.model.PostModel;
+import com.vecinet.createpostworker.infrastructure.persistence.mongo.mapper.PostMapper;
+import com.vecinet.createpostworker.infrastructure.persistence.mongo.model.PostModel;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
 
