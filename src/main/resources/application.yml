@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: create-post-worker
+
+environment:
+  mongo:
+    username: ${MONGO_USERNAME}
+    password: ${MONGO_PASSWORD}
+    cluster: ${MONGO_CLUSTER}
+    database: ${MONGO_DATABASE}
+  rabbitmq:
+    host: ${RABBITMQ_HOST}
+    port: ${RABBITMQ_PORT}
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
