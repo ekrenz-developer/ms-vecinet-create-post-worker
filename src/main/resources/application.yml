@@ -17,3 +17,5 @@ environment:
     username: ${RABBITMQ_USERNAME}
     password: ${RABBITMQ_PASSWORD}
     create_post_queue: ${RABBITMQ_CREATE_POST_QUEUE}
+    create_post_exchange: ${RABBITMQ_CREATE_POST_EXCHANGE}
+    create_post_routing_key: ${RABBITMQ_CREATE_POST_ROUTING_KEY}
