@@ -6,21 +6,25 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 
 import java.util.Date;
 
 @Mapper(componentModel = "spring", implementationName = "PersistencePostMapper")
 public interface PostMapper {
-    @Mapping(target = "location", ignore = true)
-    @Mapping(source = "latitude", target = "latitude")
-    @Mapping(source = "longitude", target = "longitude")
-    @Mapping(source = "content", target = "content")
-    @Mapping(source = "username", target = "username")
-    @Mapping(source = "id", target = "id")
-    @Mapping(source = "createdAt", target = "createdAt", qualifiedByName = "dateToLong")
-    @Mapping(source = "updatedAt", target = "updatedAt", qualifiedByName = "dateToLong")
-    @Mapping(source = "deletedAt", target = "deletedAt", qualifiedByName = "dateToLong")
-    PostModel toPersistence(PostEntity postEntity);
+
+    default PostModel toPersistence(PostEntity postEntity) {
+        return PostModel.builder()
+                .id(postEntity.getId())
+                .username(postEntity.getUsername())
+                .latitude(postEntity.getLatitude())
+                .longitude(postEntity.getLongitude())
+                .content(postEntity.getContent())
+                .location(new GeoJsonPoint(postEntity.getLongitude(), postEntity.getLatitude()))
+                .createdAt( dateToLong(postEntity.getCreatedAt()) )
+                .updatedAt( dateToLong(postEntity.getUpdatedAt()) )
+                .build();
+    }
 
     @InheritInverseConfiguration
     @Mapping(target = "createdAt", source = "createdAt", qualifiedByName = "longToDate")

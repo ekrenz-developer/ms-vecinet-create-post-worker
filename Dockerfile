@@ -15,4 +15,4 @@ RUN ./gradlew build
 
 EXPOSE 8081
 
-CMD ["java", "-jar", "build/libs/ms-vecinet-auth-0.0.1.jar"]
+CMD ["java", "-jar", "build/libs/ms-vecinet-create-post-worker-0.0.1.jar"]
