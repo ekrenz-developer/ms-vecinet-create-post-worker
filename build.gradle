@@ -5,7 +5,8 @@ plugins {
 }
 
 group = 'com.vecinet'
-version = '0.0.1-SNAPSHOT'
+version = '0.0.1'
+archivesBaseName = "ms-vecinet-create-post-worker"
 
 java {
 	sourceCompatibility = '21'
